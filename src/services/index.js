@@ -1,15 +1,11 @@
-import axios from "axios";
+import client from './client';
 
 export const getPhotos = async (phrase) => {
   try {
-
-  const response = await axios.get("https://api.unsplash.com/search/photos", {
-    params: {
-      query: phrase
-    },
-    headers: {
-      Authorization: "Client-ID 1a418dd2beeb4226e04b3724afcccc9c2bc89b368de147474c8603d493d6aedb"
-    }
+    const response = await client.get("/search/photos", {
+      params: {
+        query: phrase
+      },
   });
 
   return response.data.results;
@@ -20,11 +16,8 @@ export const getPhotos = async (phrase) => {
 
 export const getPhoto = async (id) => {
   try {
+    const response = await client.get(`/photos/${id}`, {
 
-    const response = await axios.get(`https://api.unsplash.com/photos/${id}`, {
-      headers: {
-        Authorization: "Client-ID 1a418dd2beeb4226e04b3724afcccc9c2bc89b368de147474c8603d493d6aedb"
-      }
     });
     return response.data;
   } catch (e) {

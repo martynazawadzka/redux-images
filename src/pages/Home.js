@@ -29,7 +29,6 @@ const Home = () => {
   const onSearchSubmit = async (text) => {
     const photos = await getPhotos(text);
 
-    console.log(photos)
     setImages(photos);
   };
 

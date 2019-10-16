@@ -3,16 +3,14 @@ import {Link} from "react-router-dom";
 
 export const CardWrapper = styled.div`
   position: relative;
-  width: 25%;
+  width: 100%;
   margin-bottom: 20px;
-  padding: 20px;
   text-align: center;
 `;
 
 export const ImageLink = styled(Link)`
   position: relative;
   display: block;
-  // height: 100%;
   overflow: hidden;
 `;
 
@@ -20,7 +18,6 @@ export const Photo = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  
 `;
 
 export const DescriptionBox = styled.div`
